@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,42 +13,47 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #050505;
-            color: white;
+            color: #ffffff;
             min-height: 100vh;
         }
 
-        /* =========================
-           BARRE DU HAUT
-        ========================= */
+        /* =========================================
+           HEADER
+        ========================================= */
 
         header {
             position: fixed;
             top: 0;
             left: 0;
+
             width: 100%;
             height: 75px;
 
             display: flex;
             align-items: center;
 
-            padding: 0 40px;
+            padding: 0 45px;
 
-            background: rgba(0, 0, 0, 0.85);
-            border-bottom: 1px solid #222;
-
+            background: rgba(0, 0, 0, 0.88);
             backdrop-filter: blur(12px);
 
-            z-index: 100;
+            border-bottom: 1px solid #222222;
+
+            z-index: 1000;
         }
 
-        /* ICON V */
+        /* RED V ICON */
 
-        .icon-v {
-            width: 42px;
-            height: 42px;
+        .logo {
+            width: 44px;
+            height: 44px;
 
             display: flex;
             align-items: center;
@@ -56,44 +61,49 @@
 
             color: #ff0000;
 
-            font-size: 32px;
+            font-size: 29px;
             font-weight: 900;
 
             border: 2px solid #ff0000;
             border-radius: 10px;
 
-            margin-right: 15px;
-
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.25);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.20);
         }
 
-        /* NOM */
+        /* SITE NAME */
 
-        .title {
+        .brand {
+            margin-left: 15px;
+
             font-size: 21px;
-            font-weight: bold;
+            font-weight: 700;
+
             letter-spacing: 2px;
         }
 
-        .title span {
+        .brand span {
             color: #ff0000;
         }
 
-        /* =========================
+
+        /* =========================================
            HERO
-        ========================= */
+        ========================================= */
 
         .hero {
             min-height: 100vh;
 
+            position: relative;
+
             display: flex;
             align-items: center;
 
-            padding: 120px 8%;
+            padding: 120px 8% 80px;
 
-            position: relative;
             overflow: hidden;
         }
+
+        /* BACKGROUND IMAGE */
 
         .hero::before {
             content: "";
@@ -105,9 +115,9 @@
                 linear-gradient(
                     90deg,
                     #050505 0%,
-                    rgba(5, 5, 5, 0.95) 30%,
+                    rgba(5, 5, 5, 0.96) 25%,
                     rgba(5, 5, 5, 0.65) 55%,
-                    rgba(5, 5, 5, 0.25) 100%
+                    rgba(5, 5, 5, 0.20) 100%
                 ),
                 url("anime-anime-girls-black-background-monochrome-hd-wallpaper-preview.jpg");
 
@@ -119,18 +129,18 @@
             z-index: -1;
         }
 
-        .hero-content {
-            max-width: 600px;
+        .content {
+            width: 100%;
+            max-width: 700px;
         }
 
-        .small-title {
+        .welcome {
             color: #ff0000;
 
             font-size: 13px;
             font-weight: bold;
 
             letter-spacing: 5px;
-            text-transform: uppercase;
 
             margin-bottom: 20px;
         }
@@ -150,160 +160,199 @@
         }
 
         .description {
-            color: #aaa;
+            max-width: 550px;
+
+            color: #aaaaaa;
 
             font-size: 16px;
-            line-height: 1.8;
+            line-height: 1.7;
 
-            margin-bottom: 40px;
+            margin-bottom: 45px;
         }
 
-        /* =========================
-           BOUTON
-        ========================= */
 
-        .btn {
-            display: inline-block;
+        /* =========================================
+           ZIP SECTION
+        ========================================= */
 
-            padding: 15px 30px;
+        .upload-container {
+            width: 100%;
+            max-width: 650px;
+        }
 
-            background: #ff0000;
-            color: white;
+        .upload-title {
+            color: #ffffff;
 
-            text-decoration: none;
-
-            font-size: 13px;
+            font-size: 14px;
             font-weight: bold;
 
             letter-spacing: 2px;
 
-            border: 1px solid #ff0000;
-
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: transparent;
-            color: #ff0000;
-
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
-        }
-
-        /* =========================
-           SECTION ZIP
-        ========================= */
-
-        .zip-section {
-            padding: 100px 8%;
-
-            background: #080808;
-
-            border-top: 1px solid #202020;
-        }
-
-        .zip-section h2 {
-            font-size: 38px;
-
             margin-bottom: 12px;
         }
 
-        .zip-section h2 span {
+        .upload-title span {
             color: #ff0000;
         }
 
-        .zip-description {
-            color: #777;
+        .upload-box {
+            width: 100%;
 
-            margin-bottom: 35px;
-        }
+            min-height: 230px;
 
-        /* ZONE ZIP */
+            display: flex;
+            flex-direction: column;
 
-        .zip-box {
-            max-width: 700px;
+            align-items: center;
+            justify-content: center;
 
-            padding: 45px;
+            padding: 30px;
 
-            background: #0e0e0e;
+            background: rgba(8, 8, 8, 0.90);
 
-            border: 2px dashed #444;
-
-            text-align: center;
+            border: 2px dashed #444444;
+            border-radius: 8px;
 
             transition: 0.3s;
         }
 
-        .zip-box:hover {
+        .upload-box:hover {
             border-color: #ff0000;
 
-            background: #111;
+            background: rgba(15, 15, 15, 0.95);
+
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.10);
         }
 
+
+        /* ZIP ICON */
+
         .zip-icon {
-            font-size: 45px;
+            width: 55px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 18px;
 
             color: #ff0000;
 
-            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: bold;
+
+            border: 2px solid #ff0000;
+            border-radius: 6px;
         }
 
-        .zip-placeholder {
-            color: #aaa;
 
-            font-size: 18px;
+        /* ZIP TEXT */
 
-            margin-bottom: 25px;
-        }
+        .upload-box h2 {
+            font-size: 20px;
 
-        /* CHAMP */
-
-        .zip-input {
-            width: 100%;
-
-            padding: 16px;
-
-            background: #050505;
-
-            color: white;
-
-            border: 1px solid #333;
-
-            outline: none;
+            margin-bottom: 8px;
 
             text-align: center;
-
-            font-size: 14px;
         }
 
-        .zip-input:focus {
-            border-color: #ff0000;
+        .upload-box p {
+            color: #777777;
+
+            font-size: 13px;
+
+            margin-bottom: 20px;
+
+            text-align: center;
         }
 
-        /* =========================
+
+        /* =========================================
+           IMPORTANT ZIP LINK
+        ========================================= */
+
+        /*
+        ==================================================
+        🔴🔴🔴 LIEN DE TON FICHIER ZIP À METTRE ICI 🔴🔴🔴
+
+        REMPLACE UNIQUEMENT "LienZIP Ici"
+        PAR TON VRAI LIEN ZIP.
+
+        Exemple :
+
+        const ZIP_LINK = "https://exemple.com/monfichier.zip";
+
+        ==================================================
+        */
+
+        const {
+        }
+
+
+        /* =========================================
+           ZIP BUTTON
+        ========================================= */
+
+        .zip-button {
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            background: #ff0000;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            border: 1px solid #ff0000;
+            border-radius: 4px;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+
+            transition: 0.3s;
+        }
+
+        .zip-button:hover {
+            background: transparent;
+
+            color: #ff0000;
+
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.20);
+        }
+
+
+        /* =========================================
            FOOTER
-        ========================= */
+        ========================================= */
 
         footer {
-            padding: 30px;
+            padding: 25px;
 
             text-align: center;
 
-            color: #555;
+            color: #555555;
 
             background: #050505;
 
             border-top: 1px solid #1c1c1c;
 
-            font-size: 13px;
+            font-size: 11px;
+
+            letter-spacing: 1px;
         }
 
         footer span {
             color: #ff0000;
         }
 
-        /* =========================
+
+        /* =========================================
            MOBILE
-        ========================= */
+        ========================================= */
 
         @media (max-width: 700px) {
 
@@ -311,12 +360,12 @@
                 padding: 0 20px;
             }
 
-            .title {
+            .brand {
                 font-size: 17px;
             }
 
             .hero {
-                padding: 120px 7%;
+                padding: 110px 7% 70px;
             }
 
             .hero::before {
@@ -327,46 +376,43 @@
                 font-size: 60px;
             }
 
-            .zip-section {
-                padding: 70px 7%;
-            }
-
-            .zip-box {
-                padding: 30px 20px;
+            .upload-box {
+                min-height: 210px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
-    <!-- =========================
+    <!-- =========================================
          HEADER
-    ========================= -->
+    ========================================= -->
 
     <header>
 
-        <div class="icon-v">
+        <div class="logo">
             V
         </div>
 
-        <div class="title">
+        <div class="brand">
             Vuntria <span>Manager</span>
         </div>
 
     </header>
 
 
-    <!-- =========================
-         ACCUEIL
-    ========================= -->
+    <!-- =========================================
+         MAIN
+    ========================================= -->
 
-    <section class="hero">
+    <main class="hero">
 
-        <div class="hero-content">
+        <div class="content">
 
-            <div class="small-title">
-                Vuntria
+            <div class="welcome">
+                VUNTRIA
             </div>
 
             <h1>
@@ -374,62 +420,76 @@
             </h1>
 
             <p class="description">
-                Bienvenue sur Vuntria Manager.
-                Gérez vos fichiers et vos projets depuis
-                une interface simple, sombre et moderne.
+                Welcome to Vuntria Manager.
+                Manage your files quickly and easily
+                with a simple and modern interface.
             </p>
 
-            <a href="#zip" class="btn">
-                COMMENCER
-            </a>
+
+            <!-- =====================================
+                 ZIP FILE AREA
+            ====================================== -->
+
+            <div class="upload-container">
+
+                <div class="upload-title">
+                    <span>01.</span> ZIP FILE
+                </div>
+
+                <div class="upload-box">
+
+                    <div class="zip-icon">
+                        ZIP
+                    </div>
+
+                    <h2>
+                        YOUR ZIP FILE
+                    </h2>
+
+                    <p>
+                        Click the button below to access your ZIP file.
+                    </p>
+
+                    <!--
+                    🔴🔴🔴 LIEN ZIP À MODIFIER 🔴🔴🔴
+
+                    C'EST ICI QUE TU METS TON LIEN.
+
+                    REMPLACE :
+
+                    LienZIP Ici
+
+                    PAR TON LIEN.
+
+                    Exemple :
+                    https://monsite.com/fichier.zip
+                    -->
+
+                    <a
+                        href="https://github.com/ic3w0lf22/Roblox-Account-Manager/releases/download/3.6.1/Roblox.Account.Manager.3.6.1.zip"
+                        class="zip-button"
+                        target="_blank"
+                    >
+                        OPEN ZIP FILE
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </section>
+    </main>
 
 
-    <!-- =========================
-         FICHIER ZIP
-    ========================= -->
-
-    <section class="zip-section" id="zip">
-
-        <h2>
-            Ajouter un <span>fichier ZIP</span>
-        </h2>
-
-        <p class="zip-description">
-            Ajoutez votre fichier ZIP dans la zone ci-dessous.
-        </p>
-
-        <div class="zip-box">
-
-            <div class="zip-icon">
-                V
-            </div>
-
-            <div class="zip-placeholder">
-                Fichier ZIP mettre ici
-            </div>
-
-            <input
-                type="text"
-                class="zip-input"
-                placeholder="Fichier ZIP mettre ici"
-            >
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
+    <!-- =========================================
          FOOTER
-    ========================= -->
+    ========================================= -->
 
     <footer>
-        © 2026 <span>Vuntria Manager</span>
+        VUNTRIA MANAGER <span>©</span> 2026
     </footer>
+
 
 </body>
 </html>
